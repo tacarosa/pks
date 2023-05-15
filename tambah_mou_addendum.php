@@ -51,7 +51,7 @@
 	<div class="">
 		<div class="page-title">
 			<div class="title_left">
-				<h3>Tambah MoU</h3>
+				<h3>Tambah Addendum MoU</h3>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -85,7 +85,7 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Tanggal MoU<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text"  name="tanggal" class="form-control has-feedback-left" id="tanggal" required="required">
+									<input type="text"  name="tanggal" class="form-control has-feedback-left" id="tanggal">
                                		<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
 								</div>
 							</div>
