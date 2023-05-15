@@ -1,0 +1,21 @@
+{
+ "name": "Aplikasi Arsip Pengembangan",
+ "short_name": "Arsip Pengembangan",
+ "description": "Arsip Bagian Pengembangan",
+ "lang": "en-US",
+ "dir": "ltr",
+ "theme_color": "#414f57",
+ "start_url": ".",
+ "background_color": "#000",
+ "display": "standalone",
+ "orientation": "portrait-primary",
+ "icons": [{
+   "src": "upload/user/pinguin.jpg",
+   "sizes": "72x72",
+   "type": "image/jpg"
+  }, {
+   "src": "upload/user/pinguin.jpg",
+   "sizes": "512x512",
+   "type": "image/jpg"
+  }]
+}
