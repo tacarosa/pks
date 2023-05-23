@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		 <!-- Auto Refresh -->
-    	<meta http-equiv="refresh" content="60">
+    		<!-- <meta http-equiv="refresh" content="60"> -->
 		
 		<!-- <title> SIAS </title> -->
 		<link rel="icon" type="image/jpg" href="upload/user/logo-bsb.png" sizes="20x20">

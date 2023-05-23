@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		 <!-- Auto Refresh -->
-    	<!-- <meta http-equiv="refresh" content="60"> -->
+    		<!-- <meta http-equiv="refresh" content="60"> -->
 		
 		<!-- <title> SIAS </title> -->
 		<link rel="icon" type="image/jpg" href="../upload/user/logo-bsb.png" sizes="20x20">
@@ -232,8 +232,12 @@
 						}elseif ($_GET['page']=="perjanjian_monitoring") {
 							include 'perjanjian_monitoring.php';
 
+						//perjanjian addendum
+
 						}elseif ($_GET['page']=="perjanjian_addendum") {
-							include 'perjanjian_addendum.php';						
+							include 'perjanjian_addendum.php';	
+						}elseif ($_GET['page']=="tambah_perjanjian_addendum") {
+							include 'tambah_perjanjian_addendum.php';											
 
 
 						//mou
@@ -254,9 +258,13 @@
 							include 'mou_arsip.php';
 						}elseif ($_GET['page']=="mou_monitoring") {
 							include 'mou_monitoring.php';
-
+				
+							
+						//mou addendum
 						}elseif ($_GET['page']=="mou_addendum") {
-							include 'mou_addendum.php';						
+							include 'mou_addendum.php';	
+						}elseif ($_GET['page']=="tambah_mou_addendum") {
+							include 'tambah_mou_addendum.php';													
 
 						
 						//status

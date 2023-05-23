@@ -16,7 +16,7 @@
  				<div class="x_panel">
  					<div class="x_title">
  						<h2>Data MoU</h2>
-						 &nbsp; &nbsp;<a href="../index.php?page=tambah_mou" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
+						 &nbsp; &nbsp;<a href="index.php?page=tambah_mou" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah</a>
 						 &nbsp; &nbsp;<a href="export_xls_mou.php" class="btn btn-info btn-sm"><i class="fa fa-download"></i> Download</a>		
  						<ul class="nav navbar-right panel_toolbox">
  							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -73,7 +73,7 @@
  									<td>
  										<center>
 										 	<a href="index.php?page=mou_addendum&id=<?php echo $data['id_addendum']; ?>" class="btn btn-warning" title="Lihat"><i class="fa fa-eye"></i></a>
- 											<a href="../index.php?page=edit_mou&id=<?php echo $data['id_mou']; ?>" class="btn btn-warning" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+ 											<a href="index.php?page=edit_mou&id=<?php echo $data['id_mou']; ?>" class="btn btn-warning" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
  											<?php  if($_SESSION['level']== 'admin1' || $_SESSION['level']== 'superadmin') {?>
  											<a href="../index.php?page=hapus_mou&id=<?php echo $data['id_mou']; ?>" onclick="return confirm('Apakah Anda Yakin Menghapus Data ?')" class="btn btn-danger" title="Hapus"><i class="fa fa-trash-o"></i></a>										 		
  											<?php } ?>
