@@ -1,16 +1,18 @@
-
+	<!-- Nomor Otomatis -->
+	<?php
+		$idDok = $_GET['id'];
+ 		$query	= "SELECT max(id_mou) as noTerbesar FROM mou";
+ 		$sql	= mysqli_query($connect, $query);
+		$data	= mysqli_fetch_array($sql);			
+		$noUrut = $data['noTerbesar'];		
+		$noUrut++;					   
+	?>
+	
 	<?php
 		if (isset($_REQUEST['submit'])) {
-			
-			$query	= "SELECT max(id_perjanjian) as noTerbesar FROM perjanjian";
-			$sql	= mysqli_query($connect, $query);
-			$data	= mysqli_fetch_array($sql);			
-			$noUrut = $data['noTerbesar'];		
-			$noUrut++;
-
-			$nomor			= $_POST['nomor'];	
-			$id_perjanjian	= $noUrut;	
-			$id_addendum	= $noUrut;			
+			$nomor			= $_POST['nomor'];
+			$id_mou			= $noUrut;	
+			$id_addendum	= $idDok;	
 			$tanggal		= InggrisTgl($_POST['tanggal']);
 			$phk_1			= $_POST['phk_1'];
 			$phk_2			= $_POST['phk_2'];
@@ -27,14 +29,14 @@
 			$file     		= $_FILES['file']['name'];
 			$tmp 			= $_FILES['file']['tmp_name'];
 
-			$path			= "upload/pks/".$file;
+			$path			= "upload/mou/".$file;
 			if (move_uploaded_file($tmp, $path)) {
-				$query 		= "INSERT INTO perjanjian VALUES('', '$id_perjanjian', '$id_addendum', '$nomor', '$tanggal', '$phk_1', '$phk_2', '$phk_3', '$judul', '$mulai', '$selesai', '$status', '$user', '$tipe', '$cabang', '$file' )";
+				$query 		= "INSERT INTO mou VALUES('','$id_mou', '$id_addendum', '$nomor', '$tanggal', '$phk_1', '$phk_2', '$phk_3', '$judul', '$mulai', '$selesai', '$status', '$user', '$tipe', '$cabang', '$file' )";
 				$sql		= mysqli_query($connect, $query);
 				
 			if($sql){
 			    echo  '<script language="javascript">
-			    		window.alert("Data berhasil di tambah")               		  	
+			    		window.alert("Data berhasil di tambah")
 						window.history.go(-2);
               		  </script>';
 			}else{
@@ -49,34 +51,39 @@
 	<div class="">
 		<div class="page-title">
 			<div class="title_left">
-				<h3>Tambah Perjanjian Kerjasama</h3>
+				<h3>Tambah MoU</h3>
 			</div>
 		</div>
-		<div class="clearfix"></div>		
+		<div class="clearfix"></div>
 
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>Form Tambah Perjanjian Kerjasama</h2>
+						<h2>Form Tambah MoU</h2>
 						<ul class="nav navbar-right panel_toolbox">
 							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
 						</ul>
 						<div class="clearfix"></div>
 					</div>
 					<div class="x_content">
-						<!--Form tambah surat masuk -->
+						
+						<?php
+							$query 	= "SELECT * FROM mou WHERE id_mou='$_GET[id]'";
+							$sql 	= mysqli_query($connect, $query);
+							while ($data = mysqli_fetch_array($sql)) {
+						?>
 						<form class="form-horizontal form-label-left" method="post" enctype="multipart/form-data"> 	
 
 							<div class="item form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">Nomor PKS<span class="required">&nbsp; :</span></label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Nomor MoU<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text" name="nomor" class="form-control col-md-7 col-xs-12" required="required">
 								</div>
 							</div>
 
 							<div class="item form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">Tanggal PKS<span class="required">&nbsp; :</span></label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Tanggal MoU<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text"  name="tanggal" class="form-control has-feedback-left" id="tanggal" required="required">
                                		<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
@@ -86,33 +93,33 @@
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Pihak Pertama<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="phk_1" class="form-control col-md-7 col-xs-12" required="required">
+									<input type="text" name="phk_1" class="form-control col-md-7 col-xs-12" required="required" value="<?php echo $data['phk_1']?>">
 								</div>
 							</div>
 
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Pihak Kedua<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="phk_2" class="form-control col-md-7 col-xs-12" required="required">
+									<input type="text" name="phk_2" class="form-control col-md-7 col-xs-12" required="required" value="<?php echo $data['phk_2']?>">
 								</div>
 							</div>
 
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Pihak Ketiga<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" name="phk_3" class="form-control col-md-7 col-xs-12" required="required">
+									<input type="text" name="phk_3" class="form-control col-md-7 col-xs-12" required="required" value="<?php echo $data['phk_3']?>">
 								</div>
 							</div>
 
 							<div class="item form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Judul<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<textarea name="judul" class="form-control col-md-7 col-xs-12" required="required"></textarea>
+									<textarea name="judul" class="form-control col-md-7 col-xs-12" required="required"><?php echo $data['judul']?></textarea>
 								</div>
 							</div>
 
 							<div class="item form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">Mulai PKS<span class="required">&nbsp; :</span></label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Mulai MoU<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text"  name="mulai" class="form-control has-feedback-left" id="tanggal1" required="required">
                                		<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
@@ -120,7 +127,7 @@
 							</div>
 							
 							<div class="item form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">Selesai PKS<span class="required">&nbsp; :</span></label>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Selesai MoU<span class="required">&nbsp; :</span></label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text"  name="selesai" class="form-control has-feedback-left" id="tanggal2" required="required">
                                		<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
@@ -160,9 +167,11 @@
 								</div>
 							</div>
 						</form>
+						<?php
+							}
+						?>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
