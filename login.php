@@ -20,6 +20,8 @@
 
 		<!-- Custom Theme Style -->
 		<link href="assets/template/build/css/custom.min.css" rel="stylesheet">		
+		<!-- Custom Theme Style -->
+		<link href="assets/template/build/css/additional.css" rel="stylesheet">	
 
 	</head>
 
@@ -41,7 +43,7 @@
 						<form action="act_login.php" method="post">
 
 							<center>
-							<img src="upload/user/logo-bsb.png" alt="" class="img-circle img-responsive" style=" width: 120px; height: 90px;">
+							<img src="upload/user/logo-bsb.png" alt="" class="img-circle img-responsive" style=" width: 120px; height: 110px;">
 							</center>
 
 							<h3>:: Silahkan Login ::</h3>
