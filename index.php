@@ -26,6 +26,8 @@
 		<link href="assets/template/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
 		<!-- Custom Theme Style -->
 		<link href="assets/template/build/css/custom.min.css" rel="stylesheet">		
+		<!-- Custom Theme Style -->
+		<link href="assets/template/build/css/additional.css" rel="stylesheet">	
 	</head>	
 
 	<?php

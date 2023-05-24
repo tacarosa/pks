@@ -1,0 +1,17 @@
+.login {
+    background-image: url(../../../../assets/img/bg_bsb.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+.login_content {
+    text-shadow: none !important;
+}
+
+.user-profile {
+    cursor: pointer;
+}

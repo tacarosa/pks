@@ -75,7 +75,7 @@
 									<td style="vertical-align: middle;"><?php echo $data['status']; ?></td> 
 
  									<td>
- 										<center>
+ 										<center style="display : flex">
  											<a href="index.php?page=edit_perjanjian&id=<?php echo $data['id_perjanjian']; ?>" class="btn btn-warning" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
  											<?php  if($_SESSION['level']== 'admin' || $_SESSION['level']== 'superadmin') {?>
  											<a href="index.php?page=hapus_perjanjian&id=<?php echo $data['id_perjanjian']; ?>" onclick="return confirm('Apakah Anda Yakin Menghapus Data ?')" class="btn btn-danger" title="Hapus"><i class="fa fa-trash-o"></i></a>										 		
