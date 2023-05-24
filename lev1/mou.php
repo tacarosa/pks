@@ -71,7 +71,7 @@
 									<td style="vertical-align: middle;"><?php echo $data['status']; ?></td> 
 
  									<td>
- 										<center>
+ 										<center style="display : flex">
 										 	<a href="index.php?page=mou_addendum&id=<?php echo $data['id_addendum']; ?>" class="btn btn-warning" title="Lihat"><i class="fa fa-eye"></i></a>
  											<a href="index.php?page=edit_mou&id=<?php echo $data['id_mou']; ?>" class="btn btn-warning" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
  											<?php  if($_SESSION['level']== 'admin1' || $_SESSION['level']== 'superadmin') {?>
