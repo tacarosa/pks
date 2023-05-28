@@ -27,7 +27,7 @@
 		<!-- Custom Theme Style -->
 		<link href="assets/template/build/css/custom.min.css" rel="stylesheet">		
 		<!-- Custom Theme Style -->
-		<link href="assets/template/build/css/additional.css" rel="stylesheet">	
+		<link href="../assets/template/build/css/additional.css" rel="stylesheet">	
 	</head>	
 
 	<?php
