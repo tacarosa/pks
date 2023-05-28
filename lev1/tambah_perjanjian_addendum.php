@@ -29,7 +29,7 @@
 			$file     		= $_FILES['file']['name'];
 			$tmp 			= $_FILES['file']['tmp_name'];
 
-			$path			= "upload/pks/".$file;
+			$path			= "../upload/pks/".$file;
 			if (move_uploaded_file($tmp, $path)) {
 				$query 		= "INSERT INTO perjanjian VALUES('', '$id_perjanjian', '$id_addendum', '$nomor', '$tanggal', '$phk_1', '$phk_2', '$phk_3', '$judul', '$mulai', '$selesai', '$status', '$user', '$tipe', '$cabang', '$file' )";
 				$sql		= mysqli_query($connect, $query);
